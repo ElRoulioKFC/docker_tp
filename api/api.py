@@ -1,7 +1,7 @@
 import time
 from flask import Flask
 from flask import request
-from model.main import test,essai
+from model.main import test,essai,createPost
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 
@@ -35,3 +35,9 @@ def getEssai():
     un = request.args.get('un')
     deux = request.args.get('deux')
     return {'te': essai(int(un),int(deux))}
+
+@app.route('/api/getPost')
+def getCreatePost():
+    res = createPost()
+    print(res)
+    return res
