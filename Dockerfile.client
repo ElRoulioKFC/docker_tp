@@ -8,7 +8,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json yarn.lock tsconfig.json ./
 COPY ./src ./src
 COPY ./public ./public
-RUN ls -R
 RUN yarn install
 RUN yarn build
 
