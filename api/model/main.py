@@ -22,26 +22,26 @@ def getYoutubeVideo():
     res:str = random.choice(lines)
     return res
 
-    
+
 def createPost():
     #random type from text, image, video
-    test = random.randint(0,2)
-    if test == 0:
+    test = random.randint(0,100)
+    if test <73:
         return {
             "type":"text",
             "field":getQuotes()
         }
-    elif test == 1:
+    elif test > 73 and test < 95:
         return {
             "type":"reddit",
             "field": getRedditPost()
         }
-    elif test == 2:
+    elif test > 95 :
         return {
             "type":"youtube",
             "field": getYoutubeVideo()
         }
     return {
         "type":"text",
-        "field":"essai"
+        "field":"joli site"
     }
